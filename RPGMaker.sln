@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGMaker", "RPGMaker\RPGMaker.csproj", "{337CA92A-1336-4A3E-A0D5-989122D9D383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGMaker.Models", "RPGMaker.Models\RPGMaker.Models.csproj", "{B2CF3A7F-F617-4D0E-B3BF-340D68FD299B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337CA92A-1336-4A3E-A0D5-989122D9D383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337CA92A-1336-4A3E-A0D5-989122D9D383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337CA92A-1336-4A3E-A0D5-989122D9D383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337CA92A-1336-4A3E-A0D5-989122D9D383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2CF3A7F-F617-4D0E-B3BF-340D68FD299B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2CF3A7F-F617-4D0E-B3BF-340D68FD299B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2CF3A7F-F617-4D0E-B3BF-340D68FD299B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2CF3A7F-F617-4D0E-B3BF-340D68FD299B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CBE52FD-D61A-4ED9-9651-F88B3C262BC1}
+	EndGlobalSection
+EndGlobal
