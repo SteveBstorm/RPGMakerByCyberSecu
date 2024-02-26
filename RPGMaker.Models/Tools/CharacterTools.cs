@@ -9,9 +9,6 @@ namespace RPGMaker.Models.Tools
 {
     public static class CharacterTools
     {
-        public static void ShowCharacterProfile(this Guerrier g)
-        {
-
-        }
+      
     }
 }
