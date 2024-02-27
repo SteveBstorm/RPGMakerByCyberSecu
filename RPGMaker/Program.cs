@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RPGMaker.Game;
 using RPGMaker.Models.Characters;
 using System.Text.Json.Serialization;
 
@@ -39,6 +40,10 @@ if (joueur != null)
 
     joueur.ShowCharacterProfile();
 }
+
+Partie maGame = new Partie();
+maGame.InitialiserPartie();
+maGame.AfficherRencontres();
 
 
 //List<Personnage> groupe = new List<Personnage>();
