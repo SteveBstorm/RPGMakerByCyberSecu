@@ -40,6 +40,20 @@ if (joueur != null)
     joueur.ShowCharacterProfile();
 }
 
+if(joueur is Guerrier)
+{
+    ((Guerrier)joueur).CriDeGuerre() ;
+}
+
+if(joueur is Mage)
+{
+    Mage j = (Mage)joueur;
+}
+
+if(joueur is Pretre)
+{
+
+}
 
 //List<Personnage> groupe = new List<Personnage>();
 //Guerrier g = new Guerrier();
