@@ -6,68 +6,70 @@ using System.Text.Json.Serialization;
 
 
 
-//Personnage joueur;
+Personnage joueur;
 
-//int choix = 0;
-//while (choix < 1 || choix > 3)
-//{
-
-//    Console.WriteLine("Quelle classe voulez vous jouer ?");
-//    Console.WriteLine("1. Guerrier");
-//    Console.WriteLine("2. Mage");
-//    Console.WriteLine("3. Prêtre");
-
-//    choix = int.Parse(Console.ReadLine());
-//}
-
-//switch (choix)
-//{
-//    case 1:
-//        joueur = new Guerrier();
-//        break;
-//    case 2:
-//        joueur = new Mage();
-//        break;
-//    case 3:
-//        joueur = new Pretre();
-//        break;
-//    default:
-//        joueur = null;
-//        break;
-//}
-//if (joueur != null)
-//{
-//    joueur.Creation();
-
-//    joueur.ShowCharacterProfile();
-//}
-
-if(joueur is Guerrier)
-{
-    ((Guerrier)joueur).CriDeGuerre() ;
-}
-
-if(joueur is Mage)
-{
-    Mage j = (Mage)joueur;
-}
-
-if(joueur is Pretre)
+int choix = 0;
+while (choix < 1 || choix > 3)
 {
 
+    Console.WriteLine("Quelle classe voulez vous jouer ?");
+    Console.WriteLine("1. Guerrier");
+    Console.WriteLine("2. Mage");
+    Console.WriteLine("3. Prêtre");
+
+    choix = int.Parse(Console.ReadLine());
 }
-//Partie maGame = new Partie();
-//maGame.InitialiserPartie();
-//maGame.AfficherRencontres();
+
+switch (choix)
+{
+    case 1:
+        joueur = new Guerrier();
+        break;
+    case 2:
+        joueur = new Mage();
+        break;
+    case 3:
+        joueur = new Pretre();
+        break;
+    default:
+        joueur = null;
+        break;
+}
+if (joueur != null)
+{
+    joueur.Creation();
+
+    joueur.ShowCharacterProfile();
+}
+
+Partie maGame = new Partie();
+maGame.InitialiserPartie();
+maGame.AfficherRencontres();
+
+//if(joueur is Guerrier)
+//{
+//    ((Guerrier)joueur).CriDeGuerre() ;
+//}
+
+//if(joueur is Mage)
+//{
+//    Mage j = (Mage)joueur;
+//}
+
+//if(joueur is Pretre)
+//{
+
+//}
 
 
-Monstre m = new Goblin(); //boxing
 
-Goblin g = (Goblin)m; //unboxing
+//Monstre m = new Goblin(); //boxing
 
-g.CoupDeMasse();
+//Goblin g = (Goblin)m; //unboxing
 
-((Goblin)m).CoupDeMasse();
+//g.CoupDeMasse();
+
+//((Goblin)m).CoupDeMasse();
 
 //List<Personnage> groupe = new List<Personnage>();
 //Guerrier g = new Guerrier();
