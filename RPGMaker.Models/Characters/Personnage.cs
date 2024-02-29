@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGMaker.Models.Stuffs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGMaker.Models.Characters
 {
-    public class Personnage
+    public class Personnage : IInventaire
     {
         public string Nom { get; set; }
 
@@ -44,11 +45,15 @@ namespace RPGMaker.Models.Characters
             set { _sagesse = value; }
         }
 
+        public List<Equipement> Inventaire { get; set; }
+
 
         #endregion
 
         public void Creation()
         {
+            Inventaire = new List<Equipement>();
+
             Console.Write($"Choisissez votre nom de {this.GetType().Name} : ");
             Nom = Console.ReadLine();
 
