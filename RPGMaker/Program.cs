@@ -2,6 +2,7 @@
 using RPGMaker.Game;
 using RPGMaker.Models.Characters;
 using RPGMaker.Models.Monsters;
+using RPGMaker.Models.Stuffs;
 using System.Text.Json.Serialization;
 
 
@@ -37,14 +38,62 @@ switch (choix)
 }
 if (joueur != null)
 {
-    joueur.Creation();
+    //joueur.Creation();
 
     joueur.ShowCharacterProfile();
 }
 
+
 Partie maGame = new Partie();
 maGame.InitialiserPartie();
 maGame.AfficherRencontres();
+
+Boutique b = new Boutique();
+b.EntrerDansLaBoutique(joueur);
+
+bool PersoEstVivant = true;
+int compteurDeRencontre = 0;
+while (PersoEstVivant)
+{
+    
+
+    Console.WriteLine();
+    Console.WriteLine($"Que voulez vous faire ? (Vos PV Actuels : {joueur.PV} / {joueur.MaxPV} )");
+    Console.WriteLine("1 - Passer au combat suivant");
+    Console.WriteLine("2 - Entrer dans la boutique");
+    Console.WriteLine("3 - Afficher Inventaire");
+    if (joueur.Inventaire.Count(x => x is Consommable) > 0)
+        Console.WriteLine("4 - Prendre une potion");
+    int choixMenu = int.Parse(Console.ReadLine());
+
+    switch (choixMenu)
+    {
+        case 1:
+                Combat c = new Combat(joueur, maGame.Rencontres[compteurDeRencontre]);
+                PersoEstVivant = c.DebuterCombat(); ;
+                compteurDeRencontre++;
+            break;
+        case 2: b.EntrerDansLaBoutique(joueur);
+            break;
+        case 3: joueur.AfficherInventaire();
+            break;
+        case 4: joueur.PV += ((Consommable)Partie.EquipementsEnJeu[5]).Effet();
+               
+            break;
+
+    }
+}
+
+
+////Combat c = new Combat(joueur, maGame.Rencontres[0]);
+//if(c.DebuterCombat())
+//{
+//    Console.WriteLine("Félicitations");
+//}
+//else
+//{
+//    Console.WriteLine("t'es mort !!!");
+//}
 
 //if(joueur is Guerrier)
 //{

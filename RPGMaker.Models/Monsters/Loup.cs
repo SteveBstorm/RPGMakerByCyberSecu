@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGMaker.Models.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,11 @@ namespace RPGMaker.Models.Monsters
         public void Hurlement()
         {
             Console.WriteLine("Hurle à la mort");
+        }
+
+        public override int Degat()
+        {
+            return Des.Jet(1, 6);
         }
     }
 }

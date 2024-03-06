@@ -1,4 +1,5 @@
 ﻿using RPGMaker.Models.Stuffs;
+using RPGMaker.Models.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,11 @@ namespace RPGMaker.Models.Monsters
         public void CriDeGuerre()
         {
             Console.WriteLine("Encore du travail !!! :'(");
+        }
+
+        public override int Degat()
+        {
+            return Des.Jet(1, 8);
         }
     }
 }

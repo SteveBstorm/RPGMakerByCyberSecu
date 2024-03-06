@@ -6,25 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPGMaker.Models.Monsters
 {
-    public class Monstre
+    public abstract class Monstre : Entite
     {
-		private int _force;
+		
 
-		public virtual int Force
-		{
-			get { return _force; }
-			set { _force = value; }
-		}
-
-		private int _endurance;
-
-		public virtual int Endurance
-		{
-			get { return _endurance; }
-			set { _endurance = value; }
-		}
-
-        public void Creation()
+        public override void Creation()
         {
             Random r = new Random();
             Force = r.Next(10, 21);
@@ -39,5 +25,7 @@ namespace RPGMaker.Models.Monsters
             Console.WriteLine($"Endu : {Endurance} ({_endurance})");
 
         }
+
+        public abstract int Degat();
     }
 }

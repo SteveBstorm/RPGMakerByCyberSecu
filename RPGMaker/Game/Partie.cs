@@ -95,19 +95,19 @@ namespace RPGMaker.Game
                     case 2:
                     case 3:
                         m = new Goblin();
-                        m.Creation();
+                        //m.Creation();
                         ((Goblin)m).Inventaire = GenerationLoot();
                         Rencontres.Add(m);
                         break;
                     case 4:
                     case 5:
                         m = new Loup();
-                        m.Creation();
+                        //m.Creation();
                         Rencontres.Add(m);
                         break;
                     case 6:
                         m = new Orc();
-                        m.Creation();
+                        //m.Creation();
                         ((Orc)m).Inventaire = GenerationLoot();
                         Rencontres.Add(m);
                         break;

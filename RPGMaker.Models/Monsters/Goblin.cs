@@ -1,4 +1,5 @@
 ﻿using RPGMaker.Models.Stuffs;
+using RPGMaker.Models.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace RPGMaker.Models.Monsters
         public void CoupDeMasse()
         {
             Console.WriteLine("Moi taper toi avec gros bout de bois");
+        }
+
+        public override int Degat()
+        {
+            return Des.Jet(1, 4);
         }
     }
 }

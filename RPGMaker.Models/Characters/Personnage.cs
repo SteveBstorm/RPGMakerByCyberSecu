@@ -7,27 +7,13 @@ using System.Threading.Tasks;
 
 namespace RPGMaker.Models.Characters
 {
-    public class Personnage : IInventaire
+    public abstract class Personnage : Entite, IInventaire
     {
         public string Nom { get; set; }
 
+        public int Or { get; set; }
+      
         #region Caractéristiques
-
-        private int _force;
-
-        public virtual int Force
-        {
-            get { return _force; }
-            set { _force = value; }
-        }
-
-        private int _endurance;
-
-        public virtual int Endurance
-        {
-            get { return _endurance; }
-            set { _endurance = value; }
-        }
 
         private int _intelligence;
 
@@ -44,15 +30,20 @@ namespace RPGMaker.Models.Characters
             get { return _sagesse; }
             set { _sagesse = value; }
         }
-
         public List<Equipement> Inventaire { get; set; }
+
+        public Personnage()
+        {
+            Or = 100;
+            Inventaire = new List<Equipement>();
+        }
+
 
 
         #endregion
 
-        public void Creation()
+        public override void Creation()
         {
-            Inventaire = new List<Equipement>();
 
             Console.Write($"Choisissez votre nom de {this.GetType().Name} : ");
             Nom = Console.ReadLine();
@@ -70,11 +61,22 @@ namespace RPGMaker.Models.Characters
             
             Console.WriteLine(this.GetType().Name);
             Console.WriteLine($"Nom : {Nom}");
+            Console.WriteLine($"PV : {PV}");
             Console.WriteLine($"Force : {Force} ({_force})");
             Console.WriteLine($"Endu : {Endurance} ({_endurance})");
             Console.WriteLine($"Intel : {Intelligence} ({_intelligence})");
             Console.WriteLine($"Sagesse : {Sagesse} ({_sagesse})");
 
+        }
+
+        public void AfficherInventaire()
+        {
+            foreach(Equipement item in Inventaire)
+            {
+                Console.WriteLine($"{item.Nom}");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Vous avez {Or} Po");
         }
     }
 }

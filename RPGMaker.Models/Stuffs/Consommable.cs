@@ -13,7 +13,7 @@ namespace RPGMaker.Models.Stuffs
         public int NbFace { get; set; }
         public int Effet() 
         {
-            return NbDes * Des.Jet(NbFace);
+            return Des.Jet(NbDes, NbFace);
         }
     }
 }

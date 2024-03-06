@@ -8,10 +8,15 @@ namespace RPGMaker.Models.Tools
 {
     public class Des
     {
-        public static int Jet(int nbFace)
+        public static int Jet(int nbDes, int nbFace)
         {
             Random rnd = new Random();
-            return rnd.Next(1, nbFace + 1);
+            int result = 0;
+            for (int i = 0; i < nbDes; i++)
+            {
+               result += rnd.Next(1, nbFace + 1);
+            }
+            return result;
         }
     }
 }
